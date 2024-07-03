@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './assets/css/App.css'
 
-import Multiple from './form'
-import About from './About'
+import Multiple from './Form'
+import HomePage from './Home'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -17,8 +17,8 @@ function App() {
       <div>
         <BrowserRouter>
           <Routes>
-              <Route index element={<About />} />
-              <Route path="about" element={<About />} />
+              <Route index element={<HomePage />} />
+              <Route path="home" element={<HomePage />} />
               <Route path="form" element={<Multiple />} />
           </Routes>
         </BrowserRouter>
