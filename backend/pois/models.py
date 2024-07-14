@@ -10,7 +10,7 @@ class Poi(models.Model):
 
     # Images: save as image to specified folder location
     # here, save to images folder
-    # image = models.ImageField(blank=True, null=True, upload_to='images/')
+    image = models.ImageField(blank=True, null=True, upload_to='images/')
 
     def __str__(self) -> str:
         return f"Title: {self.title}"

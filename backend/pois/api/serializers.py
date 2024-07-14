@@ -4,4 +4,4 @@ from ..models import Poi
 class PoiSerializer(ModelSerializer):
     class Meta:
         model = Poi
-        fields = ('id', 'title', 'city')
+        fields = ('id', 'title', 'city', 'image')
