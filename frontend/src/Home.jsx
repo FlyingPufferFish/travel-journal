@@ -16,13 +16,15 @@ export function About(props) {
   );
 }
 
-// 'Trips' Section
+// 'Points of Interest' Section
 export function PoiBoard(props) {
   const [data, setData] = useState([])
 
+  // Function to fetch data
   const fetchData = async() => {
     // console log the destination url 
     console.log(import.meta.env.VITE_API_URL)
+
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}pois/`);
       if (!response.ok) {
@@ -35,14 +37,6 @@ export function PoiBoard(props) {
     } catch (error) {
       console.error('Error fetching data:', error);
     }
-  }
-
-  const postData = async() => {
-    const title = 'test x'
-    const city = 'test x city'
-    const date_visited = Date.now()
-    // const image = 
-    const body = {title, city, date_visited}
   }
 
   useEffect(() => {
