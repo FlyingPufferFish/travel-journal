@@ -10,8 +10,9 @@
 <body>
     <h1>Hello World</h1>
     {% for poi in pois.all %}
+        <p>{{ poi.title }}</p>
+        <p>{{ poi.date }}</p>
         <img src="{{ poi.image.url }}"></img>
-        <p >{{ poi.title }}</p>
     {% endfor %}
 </body>
 </html>
