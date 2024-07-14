@@ -12,32 +12,23 @@ export default function Multiple() {
       city: "",
     });
 
-  const [date_visited, setDateVisited] = useState(null);
-  const [image, setImage] = useState();
+  // const [date_visited, setDateVisited] = useState(null);
+  // const [image, setImage] = useState();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setTextData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  // function to get data to post
-  // const postData = async() => {
-  //   const body = {textData, date_visited}
-
-  //   const response = await axios.post(endpoint, body)
-  //   console.log(response)
-  //   return response.data
-  // }
-
   const handleSubmit = async(event) => {
     const uploadData = new FormData();
     uploadData.append('title', textData.title);
     uploadData.append('city', textData.city);
-    uploadData.append('date_visited', date_visited);
-    uploadData.append('image', image)
+    // uploadData.append('date_visited', date_visited);
+    // uploadData.append('image', image)
 
     console.log('everything appended');
-    fetch('http://127.0.0.1:8000/api/pois/', {
+    fetch(endpoint, {
       method: 'POST',
       body: uploadData,
     })
@@ -46,8 +37,7 @@ export default function Multiple() {
 
     // event.preventDefault();
     // post data 
-    alert(`Title: ${textData.title}, City: ${textData.city}, Date Visited: ${date_visited}, Image: ${image}`
-    );
+    alert(`Title: ${textData.title}, City: ${textData.city}`);
     // const newData = await postData()
 
 
@@ -72,7 +62,7 @@ export default function Multiple() {
           <input type="text" name="city" value={textData.city} onChange={handleChange}/>
         </label>
         <br/>
-        <label htmlFor="date">
+        {/* <label htmlFor="date">
           Date visited: 
           <DatePicker
             showIcon
@@ -86,7 +76,7 @@ export default function Multiple() {
           Image: 
           <input type="file" onChange={(evt) => setImage(evt.target.files[0])} />
         </label>
-        <br/>
+        <br/> */}
         <button type="submit">Submit</button>
       </div>
     </form>
