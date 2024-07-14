@@ -51,7 +51,7 @@ export function PoiBoard(props) {
             {data.map((item) => (
               <div>
                 <p key={item.id}>{item.title}</p>
-                {/* <img src={item.image}/> */}
+                <img src={item.image}/>
               </div>
             ))}
         </div>
