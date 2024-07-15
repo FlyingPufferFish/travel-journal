@@ -11,8 +11,7 @@ class PoiViewSet(ModelViewSet):
     def post(self, request, *args, **kwargs):
         title = request.data['title']
         city = request.data['city']
-        date = request.data['date']
-        
+        # date_visited = request.data['date_visited']
         image = request.data['image']
-        Poi.objects.create(title=title, city=city, date=date, image=image)
+        Poi.objects.create(title=title, city=city, image=image)
         return HttpResponse({'message': 'Poi created'}, status=200)
