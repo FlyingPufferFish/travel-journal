@@ -14,8 +14,8 @@ export default function Multiple() {
       city: "",
     });
 
-  const [date, setDate] = useState<Date>(null);
-  const [image, setImage] = useState();
+  // const [date_visited, setDateVisited] = useState(null);
+  // const [image, setImage] = useState();
 
   const handleTextChange = (event) => {
     const { name, value } = event.target;
@@ -36,8 +36,8 @@ export default function Multiple() {
     // const js_date = new Date()
     uploadData.append('title', textData.title);
     uploadData.append('city', textData.city);
-    uploadData.append('date', null);
-    uploadData.append('image', image)
+    // uploadData.append('date_visited', date_visited);
+    // uploadData.append('image', image)
 
     console.log('everything appended');
     fetch(endpoint, {
@@ -49,7 +49,7 @@ export default function Multiple() {
 
     // event.preventDefault();
     // post data 
-    alert(`Title: ${textData.title}, City: ${textData.city}, Date: ${date}, Image: ${image}`);
+    alert(`Title: ${textData.title}, City: ${textData.city}`);
     // const newData = await postData()
 
 
@@ -89,7 +89,7 @@ export default function Multiple() {
           Image: 
           <input type="file" onChange={handleImageChange} />
         </label>
-        <br/>
+        <br/> */}
         <button type="submit">Submit</button>
       </div>
     </form>
