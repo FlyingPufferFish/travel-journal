@@ -1,0 +1,50 @@
+.poiCard {
+    --roundedness: 10px;
+    --horizontal-padding: 15px;
+    --vertical-padding: 25px;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--roundedness);
+    background-color: #292929;
+}
+
+.poiCard__Image {
+    width: 100%;
+    height: 175px;
+    align-self: center;
+    object-fit: cover;
+    border-top-left-radius: var(--roundedness);
+    border-top-right-radius: var(--roundedness);
+}
+
+.poiCard__Text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    padding-top: var(--vertical-padding);
+    padding-left: var(--horizontal-padding);
+    padding-right: var(--horizontal-padding);
+    padding-bottom: var(--vertical-padding);
+}
+
+.poiCard__info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.poiCard__info > * {
+    margin: auto 0;
+}
+
+.poiCard__info a {
+    color: var(--Theme-Secondary, #B9FF4D);
+    text-decoration-line: none;
+}
+
+/* .poiCard__Duration {
+    color: #FF6D4C;
+} */
