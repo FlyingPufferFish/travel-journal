@@ -13,6 +13,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* new */
+section {
+  background-color: #121212;
+  max-width: 100svw;
+}
+
+html, body, p, ol, ul, li, nav, div, section, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 100svw;
+}
+
+/* new end */
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -64,5 +79,11 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2em;
   }
 }

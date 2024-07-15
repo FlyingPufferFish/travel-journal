@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PoiCard from "./components/PoiCard";
+import styles from './PoiBoard.module.css';
 
 // 'Points of Interest' Section
 export function PoiBoard(props) {
@@ -30,14 +31,17 @@ export function PoiBoard(props) {
   
   return (
     // <section id= 'about' className={styles.about}>
-    <section id='poiboard'>
-        <div>
+    <section id='poiboard' className={styles.poiBoard}>
+        <div className={styles.poiBoard__list}>
             {/* display all POI */}
             {data.map((item) => (
               <div>
-                <p key={item.id}>{item.title}</p>
-                <p key={item.id}>{item.date}</p>
-                <img src={item.image}/>
+                {/* <p key={item.id}>{item.title}</p>
+                <img src={item.image}/> */}
+                <PoiCard 
+                  title={item.title}
+                  image={item.image}
+                />
               </div>
             ))}
         </div>
