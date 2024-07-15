@@ -15,7 +15,7 @@ export default function Multiple() {
     });
 
   // const [date_visited, setDateVisited] = useState(null);
-  // const [image, setImage] = useState();
+  const [image, setImage] = useState();
 
   const handleTextChange = (event) => {
     const { name, value } = event.target;
@@ -37,7 +37,7 @@ export default function Multiple() {
     uploadData.append('title', textData.title);
     uploadData.append('city', textData.city);
     // uploadData.append('date_visited', date_visited);
-    // uploadData.append('image', image)
+    uploadData.append('image', image);
 
     console.log('everything appended');
     fetch(endpoint, {
@@ -49,7 +49,7 @@ export default function Multiple() {
 
     // event.preventDefault();
     // post data 
-    alert(`Title: ${textData.title}, City: ${textData.city}`);
+    alert(`Title: ${textData.title}, City: ${textData.city}, Image: ${image}`);
     // const newData = await postData()
 
 
@@ -73,7 +73,7 @@ export default function Multiple() {
           City: 
           <input type="text" name="city" value={textData.city} onChange={handleTextChange}/>
         </label>
-        <br/>
+        {/* <br/>
         <label htmlFor="date">
           Date visited: 
           <DatePicker
@@ -83,13 +83,13 @@ export default function Multiple() {
             dateFormat={DATE_FORMAT}
             placeholderText="Choose Date"
           />
-        </label>
+        </label> */}
         <br/>
         <label htmlFor="image">
           Image: 
           <input type="file" onChange={handleImageChange} />
         </label>
-        <br/> */}
+        <br/>
         <button type="submit">Submit</button>
       </div>
     </form>
